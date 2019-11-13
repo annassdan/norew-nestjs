@@ -1,10 +1,21 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { DatabaseModule } from './database/database.module';
+import { PengunjungModule } from './endpoints/pengunjung/pengunjung.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [
+    /**
+     * Konfigurasi Database forRoot dari TypeORM Nest akan ter-inject otomatis
+     * dari file 'ormconfig.json' yang berada di root folder
+     */
+    TypeOrmModule.forRoot(),
+
+    /* Import Pengunjung Module */
+    PengunjungModule
+
+  ],
   controllers: [AppController],
   providers: [ AppService ],
   exports: []
