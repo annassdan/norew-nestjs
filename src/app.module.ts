@@ -23,4 +23,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   providers: [ AppService ],
   exports: []
 })
+/**
+ * Jangan lupa, enableCors() pada 'main.ts'
+ */
 export class AppModule {}
