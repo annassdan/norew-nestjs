@@ -4,6 +4,9 @@ import { AppService } from './app.service';
 import { PengunjungModule } from './endpoints/pengunjung/pengunjung.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
+/**
+ *  Install NestJs TypeORM Wrapper 'npm install --save @nestjs/typeorm'
+ */
 @Module({
   imports: [
     /**
